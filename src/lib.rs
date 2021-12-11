@@ -1,9 +1,11 @@
-//! Experiments with heterogenous lists.
+//! Experiments with heterogenous lists (and [frunk]).
 //!
 //! Currently the following examples are implemented:
 //!
-//! * [display]: [Display][std::fmt::Display] implementation for a
-//!   heterogenous list.
+//! * [display]: [Display][std::fmt::Display] implementation for a heterogenous
+//!   list.
+//! * [display_frunk]: Ad-hoc [Display][std::fmt::Display] implementation for a
+//!   heterogenous list from [frunk].
 //!
 //! [frunk]: https://github.com/lloydmeta/frunk
 
@@ -12,6 +14,10 @@
 
 /// [Display][std::fmt::Display] implementation for heterogenous lists.
 pub mod display;
+
+/// [Display][std::fmt::Display] implementation for heterogenous lists from
+/// [frunk](https://github.com/lloydmeta/frunk).
+pub mod display_frunk;
 
 /// A recursively-defined non-empty heterogenous list.
 ///

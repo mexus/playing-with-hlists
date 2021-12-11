@@ -7,6 +7,9 @@ use crate::{HeterogenousList, ListTerminator};
 ///
 /// let some_list = hlist!["abcde", 123, String::from("Wow!")];
 /// assert_eq!("abcde, 123, Wow!", some_list.to_string());
+///
+/// let single = hlist!["abcdefg"];
+/// assert_eq!("abcdefg", single.to_string());
 /// ```
 impl<Head, Tail> fmt::Display for HeterogenousList<Head, Tail>
 where
