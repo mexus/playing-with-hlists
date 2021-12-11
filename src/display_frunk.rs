@@ -60,9 +60,6 @@ pub trait HConsDisplayExt {
     /// Wraps up the provided list into a type that implements [Display], when all
     /// types of the given list ([HNil] excluded) implement [Display].
     ///
-    /// The [`MyDisplay`] trait which is mentioned in the `where` clause is a helper
-    /// trait which is implemented for all the types which implement [Display].
-    ///
     /// [Display]: fmt::Display
     ///
     /// ```rust
@@ -78,6 +75,11 @@ pub trait HConsDisplayExt {
     fn display(self) -> StdDisplayWrapper<Self>;
 }
 
+/// # Notes on the generics constraint.
+///
+/// The [`MyDisplay`] trait which is mentioned in the `where` clause is a helper
+/// trait which is implemented for [HCons] when all of its members implement
+/// [fmt::Display].
 impl<Head, Tail> HConsDisplayExt for HCons<Head, Tail>
 where
     HCons<Head, Tail>: MyDisplay,
